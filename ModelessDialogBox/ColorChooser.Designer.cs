@@ -117,6 +117,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "ColorChooser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Choose";
             this.Load += new System.EventHandler(this.ColorChooser_Load);
             this.colorsPanel.ResumeLayout(false);
