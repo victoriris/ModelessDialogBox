@@ -32,6 +32,8 @@
             this.RedBtn = new System.Windows.Forms.RadioButton();
             this.BlueBtn = new System.Windows.Forms.RadioButton();
             this.GreenBtn = new System.Windows.Forms.RadioButton();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.otherBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // OkBtn
@@ -47,7 +49,7 @@
             // RedBtn
             // 
             this.RedBtn.AutoSize = true;
-            this.RedBtn.Location = new System.Drawing.Point(13, 34);
+            this.RedBtn.Location = new System.Drawing.Point(15, 12);
             this.RedBtn.Name = "RedBtn";
             this.RedBtn.Size = new System.Drawing.Size(45, 17);
             this.RedBtn.TabIndex = 1;
@@ -59,7 +61,7 @@
             // BlueBtn
             // 
             this.BlueBtn.AutoSize = true;
-            this.BlueBtn.Location = new System.Drawing.Point(13, 71);
+            this.BlueBtn.Location = new System.Drawing.Point(14, 45);
             this.BlueBtn.Name = "BlueBtn";
             this.BlueBtn.Size = new System.Drawing.Size(46, 17);
             this.BlueBtn.TabIndex = 2;
@@ -71,7 +73,7 @@
             // GreenBtn
             // 
             this.GreenBtn.AutoSize = true;
-            this.GreenBtn.Location = new System.Drawing.Point(13, 115);
+            this.GreenBtn.Location = new System.Drawing.Point(14, 79);
             this.GreenBtn.Name = "GreenBtn";
             this.GreenBtn.Size = new System.Drawing.Size(54, 17);
             this.GreenBtn.TabIndex = 3;
@@ -80,11 +82,24 @@
             this.GreenBtn.UseVisualStyleBackColor = true;
             this.GreenBtn.Click += new System.EventHandler(this.RadioBtn_changed);
             // 
+            // otherBtn
+            // 
+            this.otherBtn.AutoSize = true;
+            this.otherBtn.Location = new System.Drawing.Point(15, 116);
+            this.otherBtn.Name = "otherBtn";
+            this.otherBtn.Size = new System.Drawing.Size(51, 17);
+            this.otherBtn.TabIndex = 4;
+            this.otherBtn.TabStop = true;
+            this.otherBtn.Text = "Other";
+            this.otherBtn.UseVisualStyleBackColor = true;
+            this.otherBtn.Click += new System.EventHandler(this.OtherBtn_Click);
+            // 
             // ColorChooser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(211, 232);
+            this.Controls.Add(this.otherBtn);
             this.Controls.Add(this.GreenBtn);
             this.Controls.Add(this.BlueBtn);
             this.Controls.Add(this.RedBtn);
@@ -102,5 +117,7 @@
         private System.Windows.Forms.RadioButton RedBtn;
         private System.Windows.Forms.RadioButton BlueBtn;
         private System.Windows.Forms.RadioButton GreenBtn;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.RadioButton otherBtn;
     }
 }

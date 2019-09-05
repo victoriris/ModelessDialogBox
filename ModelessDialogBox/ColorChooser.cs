@@ -25,5 +25,14 @@ namespace ModelessDialogBox
             Close();
         }
 
+        private void OtherBtn_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+
+            if(colorDialog.ShowDialog() == DialogResult.OK)
+            {
+               changeColor(colorDialog.Color);
+            }
+        }
     }
 }
