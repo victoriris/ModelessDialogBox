@@ -12,7 +12,8 @@ namespace ModelessDialogBox
 {
     public partial class MainForm : Form
     {
-        
+        ColorChooser colorChooser = new ColorChooser();
+
         public MainForm()
         {
             InitializeComponent();
@@ -41,16 +42,15 @@ namespace ModelessDialogBox
 
         private void ColorChangeBtn_Click(object sender, EventArgs e)
         {
-            ColorChooser colorChooser = new ColorChooser();
+            
             colorChooser.changeColor += bgColor_changed;
 
-            if (isFormOpen("ColorChooser"))
-            {
-                colorChooser.BringToFront();
-            } else
+            if (!isFormOpen("ColorChooser"))
             {
                 colorChooser.Show();
-            }
+            } 
+
+            colorChooser.BringToFront();
             
         }
     }
