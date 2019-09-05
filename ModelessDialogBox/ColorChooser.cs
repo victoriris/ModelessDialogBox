@@ -7,6 +7,7 @@ namespace ModelessDialogBox
     {
         public delegate void ChangeColorEvent(System.Drawing.Color color);
         public event ChangeColorEvent changeColor;
+        public string selectedColor = "";
 
         public ColorChooser()
         {
@@ -32,6 +33,23 @@ namespace ModelessDialogBox
             if(colorDialog.ShowDialog() == DialogResult.OK)
             {
                changeColor(colorDialog.Color);
+            }
+        }
+
+        private void ColorChooser_Load(object sender, EventArgs e)
+        {
+            bool optionFound = false;
+            foreach (RadioButton colorBtn in colorsPanel.Controls)
+            {
+                if (colorBtn.Text == selectedColor)
+                {
+                    colorBtn.Checked = true;
+                    optionFound = true;
+                }
+            }
+            if (!optionFound && selectedColor.Length > 0)
+            {
+                otherBtn.Checked = true;
             }
         }
     }

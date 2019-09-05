@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ModelessDialogBox
 {
     public partial class MainForm : Form
     {
-        ColorChooser colorChooser = new ColorChooser();
+
+        ColorChooser colorChooser;
 
         public MainForm()
         {
@@ -42,16 +36,17 @@ namespace ModelessDialogBox
 
         private void ColorChangeBtn_Click(object sender, EventArgs e)
         {
-            
+            colorChooser = new ColorChooser();
             colorChooser.changeColor += bgColor_changed;
+
+            colorChooser.selectedColor = this.BackColor.Name;
+            colorChooser.TopMost = true;
 
             if (!isFormOpen("ColorChooser"))
             {
                 colorChooser.Show();
-            } 
+            }        
 
-            colorChooser.BringToFront();
-            
         }
     }
 }

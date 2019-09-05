@@ -34,11 +34,13 @@
             this.GreenBtn = new System.Windows.Forms.RadioButton();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.otherBtn = new System.Windows.Forms.RadioButton();
+            this.colorsPanel = new System.Windows.Forms.Panel();
+            this.colorsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // OkBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(66, 177);
+            this.OkBtn.Location = new System.Drawing.Point(40, 149);
             this.OkBtn.Name = "OkBtn";
             this.OkBtn.Size = new System.Drawing.Size(75, 23);
             this.OkBtn.TabIndex = 0;
@@ -49,7 +51,7 @@
             // RedBtn
             // 
             this.RedBtn.AutoSize = true;
-            this.RedBtn.Location = new System.Drawing.Point(15, 12);
+            this.RedBtn.Location = new System.Drawing.Point(5, 3);
             this.RedBtn.Name = "RedBtn";
             this.RedBtn.Size = new System.Drawing.Size(45, 17);
             this.RedBtn.TabIndex = 1;
@@ -61,7 +63,7 @@
             // BlueBtn
             // 
             this.BlueBtn.AutoSize = true;
-            this.BlueBtn.Location = new System.Drawing.Point(14, 45);
+            this.BlueBtn.Location = new System.Drawing.Point(4, 33);
             this.BlueBtn.Name = "BlueBtn";
             this.BlueBtn.Size = new System.Drawing.Size(46, 17);
             this.BlueBtn.TabIndex = 2;
@@ -73,7 +75,7 @@
             // GreenBtn
             // 
             this.GreenBtn.AutoSize = true;
-            this.GreenBtn.Location = new System.Drawing.Point(14, 79);
+            this.GreenBtn.Location = new System.Drawing.Point(4, 67);
             this.GreenBtn.Name = "GreenBtn";
             this.GreenBtn.Size = new System.Drawing.Size(54, 17);
             this.GreenBtn.TabIndex = 3;
@@ -85,7 +87,7 @@
             // otherBtn
             // 
             this.otherBtn.AutoSize = true;
-            this.otherBtn.Location = new System.Drawing.Point(15, 116);
+            this.otherBtn.Location = new System.Drawing.Point(5, 99);
             this.otherBtn.Name = "otherBtn";
             this.otherBtn.Size = new System.Drawing.Size(51, 17);
             this.otherBtn.TabIndex = 4;
@@ -94,20 +96,32 @@
             this.otherBtn.UseVisualStyleBackColor = true;
             this.otherBtn.Click += new System.EventHandler(this.OtherBtn_Click);
             // 
+            // colorsPanel
+            // 
+            this.colorsPanel.Controls.Add(this.GreenBtn);
+            this.colorsPanel.Controls.Add(this.otherBtn);
+            this.colorsPanel.Controls.Add(this.BlueBtn);
+            this.colorsPanel.Controls.Add(this.RedBtn);
+            this.colorsPanel.Location = new System.Drawing.Point(10, 12);
+            this.colorsPanel.Name = "colorsPanel";
+            this.colorsPanel.Size = new System.Drawing.Size(126, 131);
+            this.colorsPanel.TabIndex = 5;
+            // 
             // ColorChooser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(211, 232);
-            this.Controls.Add(this.otherBtn);
-            this.Controls.Add(this.GreenBtn);
-            this.Controls.Add(this.BlueBtn);
-            this.Controls.Add(this.RedBtn);
+            this.ClientSize = new System.Drawing.Size(162, 184);
+            this.Controls.Add(this.colorsPanel);
             this.Controls.Add(this.OkBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "ColorChooser";
             this.Text = "Choose";
+            this.Load += new System.EventHandler(this.ColorChooser_Load);
+            this.colorsPanel.ResumeLayout(false);
+            this.colorsPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -119,5 +133,6 @@
         private System.Windows.Forms.RadioButton GreenBtn;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.RadioButton otherBtn;
+        private System.Windows.Forms.Panel colorsPanel;
     }
 }
